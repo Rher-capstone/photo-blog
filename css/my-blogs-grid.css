@@ -1,0 +1,432 @@
+h2 {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#postsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    margin: 20px auto;
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 20px; /* Adds some space at the bottom for the date */
+    background-color: white;
+}
+
+.photo-container {
+    display: flex;
+    height: auto;
+    align-items: center;
+    margin-bottom: 20px;  
+    text-align: center;
+    justify-content: center;
+}
+
+.photo-container img {
+    max-width: 90%; /* Ensure the image doesn't overflow the container */
+    height: auto;
+}
+
+.photo-nav-button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.photo-nav-button:hover {
+    background-color: #bbb;
+}
+
+.blog-creation-date {
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    bottom: 5px; /* Positions it at the very bottom */
+    width: 100%;
+    text-align: center;
+}
+
+
+.blog-creation-date::before {
+    content: "Posted on: ";
+    font-weight: bold;
+}
+
+
+.blog-user-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.blog-user-image {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-left: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.blog-username {
+    margin-left: 20px;
+    display: block;
+    text-align: center; 
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
+
+
+.blog-photo {
+    width: 100%;
+    height: auto;
+    display: block; 
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    display: block; 
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+
+.blog-description {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+.blog-separator {
+    border-color: blue;
+}
+
+
+.left-arrow, .right-arrow {
+    font-size: 24px; 
+    cursor: pointer; 
+    margin: 0 10px; 
+}
+
+.date-range-separator {
+    margin: 0 10px;  /* Equal space between date inputs */
+}
+
+
+.no-results-message {
+    color: #5bc0de; 
+    background-color: #d9edf7; 
+    border-color: #bce8f1; 
+    padding: 15px 20px; 
+    margin: 20px 0; 
+    font-size: 16px; 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .blog-photo {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    #searchContainer {
+        flex-direction: column; /* stacks search elements if necessary */
+    }
+}
+
+.dropdown {
+    position: absolute; /* Changed to absolute for positioning */
+    top: 10px; /* Adjust this value to position the button vertically */
+    right: 10px; /* Adjust this value to position the button horizontally */
+    z-index: 1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* Aligns dropdown to the right */
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 5px; /* Space from the button */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown on hover */
+}
+
+.options-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Adjust size for visibility */
+}
+
+.blog-container {
+    position: relative; /* Added to contain the absolute positioned dropdown */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between blog posts */
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#privacyFilter {
+    margin-bottom: 10px; /* Adds a gap below the privacy filter */
+}
+
+#saveButton {
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin-top: 10px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+#saveButton:hover {
+    background-color: #0056b3; 
+}
+
+
+/* Below is the modal image nav button css */
+.photo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#photoGallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.photo-nav-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.photo-display {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0 10px;
+}
+
+#prevPhoto, #nextPhoto {
+    display: none; /* Initially hide buttons */
+}
+
+.photo-nav-button:hover {
+    color: #007BFF;
+}
+
+.modal-photo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.delete-photo-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.delete-photo-button:hover {
+    background-color: red;
+}
+
+/* Modal Container */
+#privacyModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above all other elements */
+    display: none; /* Hidden by default */
+}
+
+/* Modal Content */
+#privacyModal .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Close Button */
+#closePrivacyModal {
+    position: absolute;
+    top: 10px;
+    right: 15px; /* Position it slightly inset from the right */
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+#closePrivacyModal:hover {
+    color: red; /* Change color on hover */
+}
+
+/* Modal Heading */
+#privacyModal h2 {
+    margin: 10px 0 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Modal Description */
+#privacyModal p {
+    margin: 0 0 20px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Buttons */
+.privacy-action-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.privacy-action-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+iframe {
+    object-fit: cover;
+    max-width: 100%;
+}

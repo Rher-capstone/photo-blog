@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+}
+
+.tableContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(233, 247, 249);
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    overflow-x:scroll;
+}
+
+.tableContainer .styledTable {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.styledTable thead tr.header {
+    background-color: rgb(73, 100, 181);
+    color: white;
+}
+
+.styledTable td, .styledTable th {
+    font-size: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+button {
+    display: inline-block;
+    margin: 0 auto;
+}

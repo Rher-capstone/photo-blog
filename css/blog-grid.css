@@ -1,0 +1,141 @@
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+#header-title {
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container#sort-row {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-items: center;
+}
+
+#all-func {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#sort-drop {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card {
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 0px;
+    transition: transform 150ms ease-in-out;
+}
+
+.card:hover {
+    transform: scale(110%);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.card-footer {
+    padding: 10px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.card-text {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/*
+Modal
+*/
+.modal#card-modal {
+    --bs-modal-max-width: 1400px;
+    --bs-modal-width: 1000px;
+    justify-items: center;
+}
+
+.modal-dialogue-centered {
+    padding: 10px;
+}
+
+.modal-header {
+    padding: 10px;
+    justify-content: center;
+}
+
+.modal-content {
+    padding: 10px;
+    justify-items: center;
+}
+
+.modal-body {
+    padding: 10px;
+}
+
+
+img#card-modal-img {
+    padding: 10px;
+    width: 100%;
+    max-width: 50%;
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    display: block; /* Ensure it behaves like a block element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+#card-modal-footer {
+    padding: 10px;
+}
+
+#card-modal-email {
+    padding: 10px;
+}
+
+.pagination {
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .card-img {
+        height: 150px;
+    }
+}

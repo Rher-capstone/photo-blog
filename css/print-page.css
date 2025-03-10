@@ -1,0 +1,238 @@
+@media print {
+    body *:not(.printable, .printable *) {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    @page {
+        margin: 0;
+        padding: 0;
+        size: letter;
+        
+    }
+
+    .printable {
+        margin: 0;
+        max-width: inherit;
+        max-height: inherit;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .table-of-contents {
+        display: flex;
+        flex-direction: column;
+        max-width: inherit;
+        max-height: inherit;
+
+        * {
+            font-family: Georgia, serif;
+        }
+
+        *:not(.entry-container *, .entry-container, .table-title) {
+            margin: 0;
+            border-style: solid;
+            border-width: 0.5px;
+            border-radius: 15px;
+        }
+
+        .table-title {
+            display: flex;
+            min-height: 1in;
+            max-width: inherit;
+            min-width: 100%;
+            background-image: url("../images/banner.png");
+            border-bottom: 0.5px solid black;
+            justify-content: center;
+            align-items: center;
+            h1 {
+                padding: 15px;
+                margin: 0;
+                background-color: whitesmoke;
+                max-width: fit-content;
+                max-height: 0.75in;
+                align-content: center;
+                -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+                -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+                box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+            }
+        }
+
+
+        .entry-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            page-break-after: always;
+            background: linear-gradient(135deg, #ccdffc, #e2faed);
+            padding: 15px;
+            max-height: 10in;
+            min-height: 10in;
+            max-width: inherit;
+            align-content: start;
+            justify-items: center;
+
+            .table-entry {
+                display: flex;
+                min-width: 50%;
+                max-height: 0.5in;
+                border-radius: 15px;
+                justify-content: center;
+                align-content: center;
+
+                * {
+                    -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+                    -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+                    box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+                    border-style: solid;
+                    border-width: 1px;
+                }
+
+                .entry-title {
+                    background-color: white;
+                    border-radius: 15px;
+                    max-height: inherit;
+                    padding: 5px;
+                    min-width: 3.5in;
+                    max-width: 3.5in;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    
+                }
+
+                .entry-num {
+                    font-size: 0.9rem;
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 5px;
+                    margin-right: 5px;
+                    max-width: 12%;
+                    min-width: 12%;
+                    max-height: 0.35in;
+                    min-height: 0.35in;
+                }
+
+            }
+
+        }
+    }
+
+    .printelement {
+        margin: 0;
+        max-height: inherit;
+        max-width: inherit;
+        min-height: 100%;
+        min-width: 100%;
+        display: grid;
+
+        page-break-after: always;
+        align-content: center;
+        justify-content: center;
+
+        *:not(.row, img) {
+            border-style: solid;
+            border-width: 0.5px;
+            margin: 0;
+        }
+
+        .desc,
+        img,
+        .page-num,
+        .event-date-badge,
+        .print-header * {
+            -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+            -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+            box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.28);
+        }
+
+        .print-header {
+            background-image: url("../images/banner.png");
+            border-bottom-width: 0px;
+            min-height: 1in;
+            display: flex;
+            min-width: inherit;
+            align-items: center;
+            justify-content: space-evenly;
+
+            *{
+                background-color: whitesmoke;
+                border-radius: 15px;
+                padding: 10px;
+                min-height: fit-content;
+                max-width: fit-content;
+                font-family: Georgia, serif;
+            }
+            
+        }
+
+        .print-body {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ccdffc, #e2faed);
+            border-bottom-width: 0px;
+            min-height: 7.5in;
+            min-width: 8.5in;
+            max-height: 7.5in;
+            max-width: 8.5in;
+            padding: 25px;
+            
+        }
+
+        .print-footer {
+            position: relative;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.5in;
+            padding: 15px;
+            background-image: url("../images/banner.png");
+            * {
+                font-family: Georgia, serif;
+            }
+
+            .page-num {
+                padding: 5px;
+                background-color: whitesmoke;
+                border-radius: 15px;
+                position: absolute;
+                top: 10px;
+                right: 25px;
+            }
+
+            .event-date-badge {
+                padding: 5px;
+                background-color: whitesmoke;
+                border-radius: 15px;
+                position: absolute;
+                top: 10px;
+                left: 25px;
+            }
+
+            .desc {
+                text-align: left;
+                margin-top: 5%;
+                padding: 15px;
+                background-color: whitesmoke;
+                border-radius: 15px;
+                min-width: 90%;
+                min-height: 80%;
+            }
+
+        }
+    }
+
+    img {
+        border-radius: 15px;
+        max-width: 100%;
+        object-fit: cover;
+    }
+}

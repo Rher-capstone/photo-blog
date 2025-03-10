@@ -1,0 +1,88 @@
+.sorting-components {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin-bottom: 25px;
+    row-gap: 15px;
+
+    #searchContainer {
+        min-height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 0;
+        justify-content: space-evenly;
+        
+    }
+
+    .sorting-dropdown {
+        min-height: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        /*
+        border: 1px solid black;
+        */
+        border-radius: 15px;
+        background-color: white;
+        
+    }
+
+    .labeled-input {
+        margin: none;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 10px;
+        border-radius: 15px;
+        max-height: inherit;
+        justify-content: end;
+
+        select {
+            min-height: 48px;
+            border-radius: 15px;
+        }
+
+        input {
+            border-radius: 15px;
+        }
+    }
+
+}
+
+.sort-util-button {
+    padding: 10px 15px;
+    background-color: #007BFF; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#searchButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+#searchInput,
+#startDate,
+#endDate {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px; /* Adjust width as needed */
+}
+
+#searchInput {
+    max-width: 200px;
+}
+
+#startDate,
+#endDate {
+    max-width: 160px;
+}

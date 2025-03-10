@@ -1,0 +1,302 @@
+/* Container Styles */
+.container#book-bar {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px;
+    height: max-content;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #e2faed, #ccdffc);
+    align-content: start;
+}
+
+.container.no-book,
+.container.no-blogs {
+    min-height: 500px;
+    max-height: 800px;
+    text-align: center;
+    align-content: center;
+}
+
+/* Card Styles */
+.card {
+    display: flex;
+    flex: 1;
+    box-shadow: 15px 15px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 150ms ease-in-out;
+}
+
+.card:hover {
+    transform: scale(110%);
+}
+
+.card.bar-card:not(#new-book) {
+    padding: 0px;
+    max-width: 180px;
+    min-width: 180px;
+    max-height: 180px;
+    min-height: 180px;
+}
+
+.card.bar-card#new-book {
+    padding: 0px;
+    min-height: 120px;
+    max-width: 70px;
+    max-height: 120px;
+    min-width: 70px;
+    border-radius: 12%;
+}
+
+.card-body {
+    padding: 0px;
+    justify-content: center;
+    align-content: center;
+    background: linear-gradient(135deg, #ccdffc, #e2faed);
+    display: flex;
+    overflow-y: hidden;
+    
+    #blank {
+        object-fit: scale-down;
+        object-position: center;
+        padding: 50px;
+    }
+
+    #blank-bar,
+    #book-img {
+        object-fit: scale-down;
+        object-position: center;
+        padding: 15px;
+    }
+}
+
+.card-header {
+    text-align: center;
+    justify-items: center;
+}
+
+img {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.card-img {
+    border-top-right-radius: 0%;
+    border-top-left-radius: 0%;
+}
+
+/* Modal Styles */
+#abook-modal {
+    --bs-modal-max-width: 1400px;
+    --bs-modal-width: 1000px;
+    justify-items: center;
+}
+
+.modal-header {
+    text-align: center;
+    margin: auto;
+}
+
+.modal-footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    max-width: none;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+/* Button Styles */
+.btn {
+    font-size: 0.9rem;
+    min-width: 110px;
+    max-width: 150px;
+    max-height: 50px;
+}
+
+/* Progress Styles */
+#progress-container {
+    padding: 15px;
+    height: 100px;
+    max-width: 600px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#progress-bar {
+    width: 0%;
+}
+
+.progress {
+    --bs-progress-height: 1.5rem;
+}
+
+/* Alpha Grid Styles */
+#alpha-grid,
+#alpha-grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    min-width: 100%;
+    min-height: fit-content;
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#abook-modal-row,
+.row#alpha-grid-row {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.row#alpha-grid-row {
+    justify-content: space-between;
+}
+
+.card.a-grid {
+    padding: 0px;
+    min-width: 280px;
+    min-height: 280px;
+    max-width: 280px;
+    max-height: 280px;
+}
+
+/* Utility Bar Styles */
+#util-bar {
+    max-width: 80%;
+    row-gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#button-container {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 250px;
+    max-height: inherit;
+    align-content: center;
+    justify-content: center;
+    margin: 5px;
+    display: flex;
+}
+
+/* Multi Number Badge */
+.nested-count-badge {
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    max-width: 200px;
+    max-height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    bottom: -15px;
+    left: -15px;
+    background-color: blue;
+}
+
+.entry-count-badge {
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    max-width: 200px;
+    max-height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    bottom: -15px;
+    right: -15px;
+    background-color: green;
+}
+
+/* Flexbox and Grid Utilities */
+.col {
+    display: grid;
+    row-gap: 10px;
+}
+
+/* Selected Card Styles */
+.selected {
+    transform: scale(1.1);
+    -webkit-box-shadow: 0px 0px 27px 10px rgba(255, 182, 56, 0.8) !important;
+    -moz-box-shadow: 0px 0px 27px 10px rgba(255, 182, 56, 0.8) !important;
+    box-shadow: 0px 0px 27px 10px rgba(255, 182, 56, 0.8) !important;
+}
+
+/* Book Bar Row Styles */
+#book-bar-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    margin: auto;
+    padding: 20px;
+    max-height: 400px;
+    gap: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+/* Content Styles */
+#book-content {
+    margin-top: 20px;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #e2faed, #ccdffc);
+}
+
+.invalid {
+    border-color: red !important;
+}
+
+.error {
+    color: red;
+}
+
+@media (max-width: 1200px) {
+    .card:not(#new-book) {
+        scale: 90%;
+    }
+    
+    #alpha-grid-row {
+        gap: 5px !important;
+    }
+
+    #prog-header {
+        font-size: 1.8rem !important;
+    }
+
+}
+
+@media (max-width: 776px) {
+    .card:not(#new-book) {
+        scale: 80%;
+    }
+    
+    #alpha-grid-row {
+        gap: 0px !important;
+    }
+
+    #prog-header {
+        font-size: 1.6rem !important;
+    }
+
+}
+
+@media (max-width: 514px) {
+
+
+}

@@ -1,0 +1,423 @@
+/*
+The stylings used here are intended for styling ONLY the most commonly shared page components.
+The file itself is referenced in the head-tag-contents.php file, so you only need to include
+the header-tag-contents.php file in <head> section of the page.
+
+The structure of the file is intentional. The styling should not affect elements that are
+not in the includes folder. If it does, there is a problem.
+
+The styling elements are:
+- Page <body>
+    - For background image & parallax effect.
+- Header
+    - Logo & Site Title
+    - Navigation Bar
+    - User Widget
+- Page Title
+    - Text Color & Alignment
+    - Background Gradient
+- Page Content Body
+    - Not really utilized.
+- Page Footer
+
+*/
+
+body, html {
+    height: 100%;
+}
+
+/*
+Sets background image and parallax effect.
+*/
+body {
+    background-image: url("../images/background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+The page title (Home, My Blogs, etc...).
+This element must be in the <body> and not
+in the main content.
+*/
+body > h2 {
+    margin: 0;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 10%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.363), rgba(0, 0, 0, 0));
+    text-align: center;
+    align-content: center;
+    color: white;
+    text-shadow: rgb(47, 255, 255) 1px 0 10px;
+}
+
+/*
+The Header Element. Contains the navigation, user widget (login/logout and user settings),
+and site title & logo.
+*/
+.main-header {
+    padding: 2rem;
+    padding-left: 60px;
+    padding-right: 60px;
+    max-height: 200px;
+    min-width: 380px;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    background-image: url('../images/banner.png'); 
+    background-size: cover; 
+    background-position: center;
+    justify-content: space-between;
+    align-items: center;
+
+    /*
+    Logo Element. Consists of the logo image and
+    site title.
+    */
+    .logo {
+        display: flex; 
+        flex-wrap: nowrap;
+        align-items: center;
+
+        /* Image Container */
+        .logo-img {
+            background-color: white;
+            display: block;
+            max-width: 150px;
+            border: 3px solid #000000;
+            border-radius: 20%;
+            padding-left: 5px;
+            padding-right: 5px;
+
+            .logo-title {
+                text-align: center;
+            }
+        }
+    }
+
+    /*
+    A widget to display the current user.
+    Contains links to settings page and
+    log in/out functionality.
+    */
+    .user-widget {
+        margin: 0;
+        display: flex; 
+        flex-wrap: nowrap;
+        flex-direction: row;
+        max-width: 300px;
+        max-height: 120px;
+        background-color: white;
+        border-radius: 20px;
+        justify-content: space-between;
+        align-content: center;
+
+        /* Name and page links */
+        .user-links {
+            margin: 0;
+            display: flex; 
+            flex-wrap: wrap;
+            max-width: fit-content;
+            min-width: 60%;
+            align-content: start;
+            
+            h4 {
+                border-bottom: 1px solid grey;
+                min-width: 100%;
+                text-align: center;
+            }
+
+            .btn-container {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                min-width: 100%;
+                align-content: center;
+                justify-content: center;
+                gap: 5px;
+
+                .btn {
+                    display: flex;
+                    justify-content: center;
+                    min-width: 145px;
+                    min-height: 35px;
+                    font-size: 0.9rem;
+
+                    svg {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 0px;
+                        margin-right: 5px;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+        /* Image Container */
+        .profile-image {
+            display: flex;
+            flex-wrap: nowrap;
+            max-width: 40%;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    /* 
+    Not the Bootstrap navbar class. Used to
+    contain align the navigation with the
+    header element.
+    */
+    .nav-bar {
+        display: flex; 
+        flex-wrap: nowrap;
+        align-self: flex-end;
+        align-items: end;
+
+        ul {
+            display: flex; 
+            justify-content: center; 
+            padding: 10px; 
+            background-color: white; 
+            border-radius: 30px; 
+            margin: 0 auto;
+        }
+    }
+
+    /*
+    Navigation Links to other pages or functions.
+    Affects size of buttons for some reason.
+    */
+    .nav-link {
+        display: flex;
+        font-size: 1.2rem;
+        align-items: center;
+        text-align: center;
+        svg {
+            display: flex;
+            align-items: center;
+            margin-left: 0px;
+            margin-right: 5px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .nav-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2px;
+    }
+
+    /*
+    !!! IMPORTANT: Must be contained within main-header class. !!!
+    Can effect ALL page images if placed outside of the the class.
+    */
+    img {
+        border-radius: 20%;
+        object-fit: cover;
+        max-width: 100%;
+    }
+    
+}
+
+/*
+Main Body/Content. It's here, but it doesn't do very much
+so its pretty much just decoration here.
+*/
+#main-content,
+#main-body {
+    max-width: 1430px;
+}
+
+/* 
+The Footer element. Everything is here, so please stop
+adding the the stylings inside the elements.
+*/
+#main-footer {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    min-height: 100%;
+    text-align: center;
+    background-image: url('../images/banner.png'); 
+    background-size: cover; 
+    background-position: center; 
+    min-height: 100px;
+    margin-top: 50px;
+}
+
+/*
+Everything else down here is for the header responsiveness.
+Some properties may require a !important tag to make changes.
+*/
+
+@media (max-width: 1630px)  {
+
+    .main-header {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+
+    .user-widget {
+        max-width: 250px !important;
+        max-height: 100px !important;
+
+    }
+
+    .user-links {
+
+        .btn-container {
+            gap: 2px !important;
+    
+            .btn {
+                font-size: 0.8rem;
+            }
+        }
+
+        h4 {
+            font-size: 1.2rem !important;
+        }
+    }
+
+    .nav-link {
+        font-size: 1rem !important;
+    }
+
+    .logo-title > span > h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .logo-img {
+        max-width: 100px !important;
+    }
+    
+}
+
+@media (max-width: 1430px) {
+    .user-links {
+        * {
+            font-size: 0.8rem !important;
+        }
+
+        h4 {
+            font-size: 1rem !important;
+        }
+    }
+    
+
+    .nav-link {
+        font-size: 0.7rem !important;
+    }
+
+    .logo-title > span > h1 {
+        font-size: 1.25rem !important;
+    }
+
+    .nav-item {
+        max-width: 80%;
+    }
+    
+}
+
+@media (max-width: 1240px) {
+
+    .main-header {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        flex-wrap: wrap;
+        position: relative;
+        min-height: 150px;
+    }
+
+    .user-widget {
+        position: absolute;
+        right: 15px;
+        bottom: 5px;
+    }
+
+    .profile-image {
+        display: none !important;
+    }
+
+    .btn-container {
+        flex-direction: row !important;
+        margin-bottom: 5px;
+
+        .btn {
+            font-size: 0rem !important;
+            min-width: 40% !important;
+            min-height: 30% !important;
+            svg {
+                margin-right: 0px !important;
+            }
+        }
+    }
+
+    .nav-bar > .nav.nav-pills {
+        position: absolute;
+        left: 15px;
+        bottom: 10px;
+        padding: 0 !important;
+    }
+
+    .logo-img {
+        max-width: 70px !important;
+        border-width: 1px !important;
+    }
+
+    .logo {
+        flex-wrap: wrap !important;
+        flex-direction: row !important;
+        justify-content: center;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -100px;
+    }
+}
+
+@media (max-width: 784px) {
+    
+    .nav.nav-pills {
+        position: absolute;
+        margin-left: -50%;
+        left: 50%;
+        bottom: 15px !important;
+    }
+
+    .nav-link {
+        padding: 5px !important;
+    }
+
+    .profile-image {
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 634px) {
+    svg {
+        margin-right: 0 !important;
+    }
+
+    .nav-link {
+        font-size: 0 !important;
+    }
+
+    .nav-link:hover {
+        font-size: 0.7rem !important;
+    }
+
+}
